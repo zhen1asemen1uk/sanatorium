@@ -30,5 +30,8 @@
 	},
 	"lint-staged": {
 		"**/*": "prettier --write --ignore-unknown"
+	},
+	"resolutions": {
+		"styled-components": "^5"
 	}
 }
