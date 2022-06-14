@@ -1,6 +1,7 @@
 import React from 'react';
 
 import MainLayout from '../reusable/Layout';
+import { Wrapp } from '../styles/styles';
 
 const MainPage = () => {
 	return (
@@ -9,7 +10,7 @@ const MainPage = () => {
 			description={'This is the main page'}
 			robots={'index, follow'}
 			keywords={'main, page, index'}>
-			<h1>Main page</h1>
+			<Wrapp h={'100vh'}>Main page</Wrapp>
 		</MainLayout>
 	);
 };

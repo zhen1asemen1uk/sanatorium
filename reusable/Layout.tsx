@@ -1,8 +1,17 @@
 import React from 'react';
+import Head from 'next/head';
+import styled from 'styled-components';
+
 import FooterConteiner from '../components/Footer/FooterConteiner';
 import HeaderConteiner from '../components/Header/HeaderConteiner';
-import Head from '../node_modules/next/head';
-import { MainLayoutProps } from '../types/test';
+
+import globalStyles from '../styles/globals';
+
+import { MainLayoutProps } from '../types/components';
+
+const Wrapp = styled.div`
+	min-height: 100vh;
+`;
 
 const MainLayout: React.FC<MainLayoutProps> = ({
 	children,
@@ -12,17 +21,20 @@ const MainLayout: React.FC<MainLayoutProps> = ({
 	keywords,
 }) => {
 	return (
-		<>
+		<Wrapp>
 			<Head>
 				<title>{title || `Sanatorium`}</title>
-				<meta name='description' content={description} />
+				<meta name='description' content={description || ``} />
 				<meta name='robots' content={robots || `index, follow`} />
-				<meta name='keywords' content={keywords} />
+				<meta name='keywords' content={keywords || ``} />
 			</Head>
 			<HeaderConteiner />
 			{children}
 			<FooterConteiner />
-		</>
+			<style jsx global>
+				{globalStyles}
+			</style>
+		</Wrapp>
 	);
 };
 
