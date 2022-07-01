@@ -1,6 +1,26 @@
 import styled from 'styled-components';
+interface FlexProps {
+	pos?: string;
+	pos_T?: string;
+	pos_L?: string;
+	pos_R?: string;
+	pos_B?: string;
+	d?: string;
+	fd?: string;
+	jc?: string;
+	ai?: string;
+	p?: string;
+	m?: string;
+	w?: string;
+	minW?: string;
+	maxW?: string;
+	h?: string;
+	minH?: string;
+	maxH?: string;
+	bg?: string;
+}
 
-export const FlexBlock = styled.div`
+export const FlexBlock: FlexProps = styled.div`
 	${({ pos }) => pos && `position: ${pos}`};
 	${({ pos_T }) => pos_T && `top: ${pos_T}`};
 	${({ pos_L }) => pos_L && `left: ${pos_L}`};
